@@ -1,0 +1,19 @@
+package testdata
+
+type Fooer interface {
+	// Foo does some foo stuff
+	Foo()
+	// Bar is different
+	Bar()
+}
+
+var _ Fooer = (*Concrete)(nil)
+
+type Concrete struct {
+}
+
+
+// Foo does some foo stuff
+func (c *Concrete) Foo() {}
+// Bar is different
+func (c *Concrete) Bar() {}
